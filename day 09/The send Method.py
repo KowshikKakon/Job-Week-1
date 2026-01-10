@@ -1,16 +1,17 @@
 def echo():
-    received = yield "Hey I am from inside..."
-    print(f"hi outside:{received}")
-    yield received
+    while True:
+        received = yield
+        print(f"hi inside:{received}")
+   
 
 
 gen = echo()
 
-msg = next(gen)          
-print(msg)               
+next(gen)          
+# print(msg)               
 
-msg2 = gen.send("Hi mjj!")  
-print(msg2)             
+gen.send("Hi mjj!")  
+gen.send("second attempt")             
       
 
 
