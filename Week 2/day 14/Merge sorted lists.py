@@ -1,0 +1,7 @@
+a=[1,3,5,7,9];b=[2,4,5,6,8,6]
+i=j=0;r=[]
+while i<len(a) and j<len(b):
+ if a[i]<b[j]: r.append(a[i]);i+=1
+ else: r.append(b[j]);j+=1
+r+=a[i:]+b[j:]
+print(r)
